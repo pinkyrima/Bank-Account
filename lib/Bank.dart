@@ -1,21 +1,8 @@
-
-void main() {
-  Bank bnk=Bank(30000.0,60000,5000);
-  bnk.deposit();
-  bnk.withdraw();
-
-}
-
 class Bank{
   double bal;
-  int depositAmount;
-   int withdrawAmount;
 
-  Bank(this.bal, this.depositAmount, this.withdrawAmount);
-
-
-
-  void deposit(){
+  Bank(this.bal);
+void deposit(int depositAmount){
 
     if(bal+depositAmount<=50000){
       bal+=depositAmount;
@@ -23,16 +10,20 @@ class Bank{
       print("Warning");
     }
   }
-  void withdraw(){
+  void withdraw( int withdrawAmount){
     int withdrawAmount=5000;
     if(withdrawAmount>bal){
       print("Warning");
     }else{
       bal-=withdrawAmount;
-
     }
+}
 
-
+  void display( String name,int accountNumber){
+    print("\n");
+    print("\nAccount Number : $accountNumber" );
+    print("\nName : $name" );
+    print("\nBalance : $bal" );
   }
 
 
