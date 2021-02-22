@@ -1,7 +1,12 @@
 class Bank{
+  String name;
+  int accountNumber;
+
+  Bank(this.name, this.accountNumber, this.bal);
+
   double bal;
 
-  Bank(this.bal);
+
 void deposit(int depositAmount){
 
     if(bal+depositAmount<=50000){
@@ -11,7 +16,6 @@ void deposit(int depositAmount){
     }
   }
   void withdraw( int withdrawAmount){
-    int withdrawAmount=5000;
     if(withdrawAmount>bal){
       print("Warning");
     }else{
@@ -19,11 +23,16 @@ void deposit(int depositAmount){
     }
 }
 
-  void display( String name,int accountNumber){
+  void display(String s, int i){
     print("\n");
     print("\nAccount Number : $accountNumber" );
     print("\nName : $name" );
-    print("\nBalance : $bal" );
+
+  }
+
+  void balance(int withdrawAmount){
+  bal-=withdrawAmount;
+  print("\nBalance : $bal" );
   }
 
 
